@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// text form field widget
+
 class TextFormFieldWgt extends StatelessWidget {
   final double? fontSize;
   final String? hintText;

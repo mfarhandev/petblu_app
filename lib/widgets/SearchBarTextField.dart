@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+// search bar text field
+
 class SearchBarTextField extends StatefulWidget {
   final double? fontSize;
   final double? IconSize;

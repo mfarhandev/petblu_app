@@ -27,10 +27,12 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Cat Image
         Image.asset(
           "assets/images/on3.png",
           fit: BoxFit.cover,
         ),
+        // Texts
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
@@ -38,6 +40,8 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+
+                // Thrive & Celebrate
                 AppText.normal(
                   "Thrive & Celebrate",
                   textAlign: TextAlign.left,
@@ -46,6 +50,8 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
                   fontWeight: FontWeight.bold,
                 ),
                 SizedBox(height: 10),
+
+                // description
                 AppText.normal(
                   "Track your pet's health, get expert advice and connect with a supportive community of pet parents who understand the joys (and messes!) of pet ownership.",
                   textAlign: TextAlign.justify,
@@ -54,6 +60,8 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
                   color: Colors.grey,
                 ),
                 SizedBox(height: 30),
+
+                // indicator
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -63,6 +71,8 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
                   ],
                 ),
                 SizedBox(height: 35),
+
+                // Start Button
                 ElevatedButtonWidget(
                   buttonWidth: 250,
                   buttonHeight: 50,
@@ -79,6 +89,9 @@ class _Onboarding3ScreenState extends State<Onboarding3Screen> {
                     letterSpacing: 1.0,
                   ),
                 ),
+
+
+                // Enable push notifications
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

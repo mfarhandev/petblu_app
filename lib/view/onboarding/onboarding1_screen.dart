@@ -17,10 +17,12 @@ class Onboarding1Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Dog Image
         Image.asset(
           "assets/images/on1.png",
           fit: BoxFit.cover,
         ),
+        // Join the Pet Crowd
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
@@ -28,25 +30,25 @@ class Onboarding1Screen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-
+                // Join the Pet Crowd
                 AppText.normal("Join the Pet Crowd",
                   textAlign: TextAlign.left,
                   fontsize: 28,
                   maxline: 10,
                   fontWeight: FontWeight.bold,
                 ),
-
                 SizedBox(height: 10),
 
+                // description
                 AppText.normal("Join our pet community to share tips, ask questions and learn from others.",
                   textAlign: TextAlign.justify,
                   fontsize: 16,
                   maxline: 10,
                   color: Colors.grey,
                 ),
-
                 SizedBox(height: 75),
 
+                // Indicator
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -56,8 +58,9 @@ class Onboarding1Screen extends StatelessWidget {
 
                   ],
                 ),
-
                 SizedBox(height: 40),
+
+                // Next Button
                 ElevatedButtonWidget(
                   buttonWidth: 250,
                   buttonHeight: 50,
@@ -69,6 +72,8 @@ class Onboarding1Screen extends StatelessWidget {
                   child: AppText.normal("Next",color: Colors.white,fontWeight: FontWeight.bold,fontsize: 18,letterSpacing: 1.0),
                 ),
                 SizedBox(height: 10),
+
+                // Skip for now
                 GestureDetector(
                   onTap: (){
                     AppNavigator.goToPageWithReplacementAll(context: context, screen: LoginScreen());
@@ -80,8 +85,6 @@ class Onboarding1Screen extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ),
-
-
 
                 SizedBox(height: 10),
 

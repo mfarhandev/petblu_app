@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:petblu_app/utils/custom_color.dart';
 import 'package:petblu_app/utils/global_variables.dart';
+import 'package:petblu_app/view/auth/newpassword_screen.dart';
 import 'package:petblu_app/view/home/menu_screen.dart';
 import 'package:petblu_app/widgets/ElevatedButtonWidget.dart';
 import 'package:petblu_app/widgets/PwdTextFormFieldWidget.dart';
 import 'package:petblu_app/widgets/TextFormFieldWidget.dart';
 import 'package:petblu_app/widgets/app_navigator.dart';
-import 'package:petblu_app/widgets/text_widget.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+import '../../widgets/text_widget.dart';
+import 'signup_screen.dart';
+
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
               children: [
-                // image background
+                // background image
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,14 +55,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                // login form
+                // form
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 100),
+                      SizedBox(height: 50,),
+
+                      // back button
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child:  Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.grey.shade200)
+                              ),
+                              child: Center(child: Icon(Icons.arrow_back_ios)),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 50),
 
                       // logo
                       Image.asset(
@@ -74,14 +93,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 10),
 
+                      // title
                       AppText.normal(
-                        "Log in",
+                        "Password Recovery",
                         fontsize: 28,
                         fontWeight: FontWeight.bold,
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 5,),
 
-                      // email textfield
+                      // description
+                      AppText.normal('Don’t worry! It happens. Please enter the email associated with your account.',maxline: 2),
+                      SizedBox(height: 30),
+
+                      // email
                       AppText.normal(
                         "Email address",
                         fontsize: 13,
@@ -92,31 +116,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "email@.com",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 20),
-
-                      // password textfield
-                      AppText.normal(
-                        "Password",
-                        fontsize: 13,
-                        // fontWeight: FontWeight.bold,
-                      ),
-                      SizedBox(height: 10),
-                      PwdTextFormFieldWidget(),
-                      SizedBox(height: 20),
-
-                      // forgot password
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          AppText.normal(
-                            "Forgot password?",
-                            fontsize: 13,
-                            // fontWeight: FontWeight.bold,
-                          ),
-                      ],),
                       SizedBox(height: 30),
 
-                      // login button
+                      // send code button
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -126,10 +128,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             buttonborderRadius: 10,
                             buttonBackgroundColor: btncolor,
                             onPressed: () {
-                              AppNavigator.goToPageWithReplacementAll(context: context, screen: MenuScreen());
+                              AppNavigator.goToPage(context: context, screen: NewpasswordScreen());
                             },
                             child: AppText.normal(
-                              "Log in",
+                              "Send Code",
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontsize: 18,
@@ -138,26 +140,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 30),
-
-                      // sign up
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AppText.normal(
-                            "Don't have an account? ",
-                            fontsize: 13,
-                            color: Colors.grey
-                            // fontWeight: FontWeight.bold,
-                          ),
-                          AppText.normal(
-                            "Sign up",
-                            fontsize: 13,
-                             fontWeight: FontWeight.bold,
-                          ),
-                        ],
-                      ),
-
                     ],
                   ),
                 ),

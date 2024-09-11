@@ -16,10 +16,12 @@ class Onboarding2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Parrot image
         Image.asset(
           "assets/images/on2.png",
           fit: BoxFit.cover,
         ),
+        // Texts
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
@@ -28,24 +30,25 @@ class Onboarding2Screen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
 
+                // Spoil Your Pet
                 AppText.normal("Spoil Your Pet",
                   textAlign: TextAlign.left,
                   fontsize: 28,
                   maxline: 10,
                   fontWeight: FontWeight.bold,
                 ),
-
                 SizedBox(height: 10),
 
+                // description
                 AppText.normal("Discover top-quality pet products handpicked for your furry friend's happiness and health. From toys to food, we've got you covered.",
                   textAlign: TextAlign.justify,
                   fontsize: 16,
                   maxline: 10,
                   color: Colors.grey,
                 ),
-
                 SizedBox(height: 30),
 
+                // Indicator
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -55,8 +58,9 @@ class Onboarding2Screen extends StatelessWidget {
 
                   ],
                 ),
-
                 SizedBox(height: 40),
+
+                // Next Button
                 ElevatedButtonWidget(
                   buttonWidth: 250,
                   buttonHeight: 50,
@@ -67,9 +71,6 @@ class Onboarding2Screen extends StatelessWidget {
                   },
                   child: AppText.normal("Next",color: Colors.white,fontWeight: FontWeight.bold,fontsize: 18,letterSpacing: 1.0),
                 ),
-
-
-
                 SizedBox(height: 40),
 
 

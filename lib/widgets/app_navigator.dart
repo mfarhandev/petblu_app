@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+
+// Navigator class to navigate between screens with animation
+
 class AppNavigator {
   static goToPage({required BuildContext context, required Widget screen}) {
     return Navigator.push(

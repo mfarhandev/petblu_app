@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Text Widget with custom styling and properties
+
 class AppText {
   static heading(
     String text, {

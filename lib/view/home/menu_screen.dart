@@ -10,7 +10,10 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+
   int _pageIndex = 0;
+
+  // screens list
   final List<Widget> _pages = [
     Container(), // Home Screen
     Container(), // Search Screen
@@ -22,7 +25,11 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      // body
       body: _pages[_pageIndex],
+
+      // bottom navigation bar
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
         color: Colors.blue,

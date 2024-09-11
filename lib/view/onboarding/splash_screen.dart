@@ -20,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // Video Player
     _controller = VideoPlayerController.asset('assets/videos/splash.mp4')
       ..initialize().then((_) {
         setState(() {});
@@ -40,6 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          // VideoPlayer(_controller),
           Container(
             height: double.infinity,
             child: _controller.value.isInitialized
@@ -53,14 +55,20 @@ class _SplashScreenState extends State<SplashScreen> {
                   )
                 : Center(child: CircularProgressIndicator()),
           ),
+
+          // Color Filter
           Container(
             height: double.infinity,
             color: splashcolor,
           ),
+
+          // Content
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 100,),
+
+            // Logo
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -68,6 +76,8 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
             SizedBox(height: 20,),
+
+            // Image
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -75,13 +85,17 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
             SizedBox(height: 10,),
+
+            // shop, share and care
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppText.normal("Shop, share and care",fontFamily: GoogleFonts.inter().fontFamily,fontsize: 20,color: Colors.white,fontWeight: FontWeight.bold),
               ],
             ),
-            SizedBox(height: 100,),
+              SizedBox(height: 100,),
+
+              // Get Started Button
               ElevatedButtonWidget(
                 buttonWidth: 250,
                 buttonHeight: 50,

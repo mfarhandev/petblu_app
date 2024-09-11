@@ -12,11 +12,13 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerProviderStateMixin {
+
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    // TabController length is 3
     _tabController = TabController(
       length: 3,
       vsync: this,
@@ -35,6 +37,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> with SingleTickerPr
     return Scaffold(
       body: Stack(
         children: [
+
+          // TabBar onboarding
           TabBarView(
             controller: _tabController,
             children: [
